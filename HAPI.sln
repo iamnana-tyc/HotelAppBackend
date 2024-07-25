@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAPI.Objects", "Objects\HAPI.Objects.csproj", "d302efea-84b8-4dc4-9aa2-3966082eeeb3"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAPI.Tests", "Tests\HAPI.Tests.csproj", "32c217b3-8034-4ebf-9222-3324402d3a5b"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAPI.ODataBackend", "ODataBackend\HAPI.ODataBackend.csproj", "88144fa1-f7cb-42f9-a094-048125c4dffb"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAPI.IntegrationTests", "IntegrationTests\HAPI.IntegrationTests.csproj", "7815a0c8-0c6d-49e5-a2de-a80c37b3a22f"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+Debug|Any CPU = Debug|Any CPU
+Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		d302efea-84b8-4dc4-9aa2-3966082eeeb3.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		d302efea-84b8-4dc4-9aa2-3966082eeeb3.Debug|Any CPU.Build.0 = Debug|Any CPU
+		d302efea-84b8-4dc4-9aa2-3966082eeeb3.Release|Any CPU.ActiveCfg = Release|Any CPU
+		d302efea-84b8-4dc4-9aa2-3966082eeeb3.Release|Any CPU.Build.0 = Release|Any CPU
+		32c217b3-8034-4ebf-9222-3324402d3a5b.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		32c217b3-8034-4ebf-9222-3324402d3a5b.Debug|Any CPU.Build.0 = Debug|Any CPU
+		32c217b3-8034-4ebf-9222-3324402d3a5b.Release|Any CPU.ActiveCfg = Release|Any CPU
+		32c217b3-8034-4ebf-9222-3324402d3a5b.Release|Any CPU.Build.0 = Release|Any CPU
+		88144fa1-f7cb-42f9-a094-048125c4dffb.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		88144fa1-f7cb-42f9-a094-048125c4dffb.Debug|Any CPU.Build.0 = Debug|Any CPU
+		88144fa1-f7cb-42f9-a094-048125c4dffb.Release|Any CPU.ActiveCfg = Release|Any CPU
+		88144fa1-f7cb-42f9-a094-048125c4dffb.Release|Any CPU.Build.0 = Release|Any CPU
+		7815a0c8-0c6d-49e5-a2de-a80c37b3a22f.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		7815a0c8-0c6d-49e5-a2de-a80c37b3a22f.Debug|Any CPU.Build.0 = Debug|Any CPU
+		7815a0c8-0c6d-49e5-a2de-a80c37b3a22f.Release|Any CPU.ActiveCfg = Release|Any CPU
+		7815a0c8-0c6d-49e5-a2de-a80c37b3a22f.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
