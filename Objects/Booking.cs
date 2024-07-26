@@ -33,7 +33,9 @@ namespace HAPI
     [View("BookingL", new string[] {
             "GuestName as \'Guest name\'",
             "CheckIn as \'Check in\'",
-            "CheckOut as \'Check out\'"})]
+            "CheckOut as \'Check out\'",
+            "Room",
+            "Room.Price"})]
     public class Booking : ICSSoft.STORMNET.DataObject
     {
 
