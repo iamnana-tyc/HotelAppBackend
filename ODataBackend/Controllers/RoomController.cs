@@ -1,9 +1,7 @@
 ﻿using ICSSoft.STORMNET.Business;
-using ICSSoft.STORMNET.Business.LINQProvider;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
-using ICSSoft.STORMNET.KeyGen;
+using HAPI.Service;
 
 namespace HAPI.Controllers
 {
@@ -22,12 +20,7 @@ namespace HAPI.Controllers
         [Route("isRoomFree")]
         public ActionResult IsRoomFree([FromQuery] Guid roomId, [FromQuery] DateTime dateToFilter)
         {
-            Room room = new Room();
-            room.SetExistObjectPrimaryKey(roomId);
-
-            var bookings = dataService.Query<Booking>(Booking.Views.BookingE).Where(b => b.Room == room);
-            bool isFree = !bookings.Any(b => b.CheckIn.Date == dateToFilter);
-
+            bool isFree = BookingService.IsRoomFree(dataService, roomId, dateToFilter);
             return Ok(isFree);
         }
     }
