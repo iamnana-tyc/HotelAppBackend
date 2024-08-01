@@ -1,11 +1,6 @@
-﻿using ICSSoft.STORMNET;
+﻿using HAPI.Service;
 using ICSSoft.STORMNET.Business;
-using ICSSoft.STORMNET.Business.LINQProvider;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace HAPI.Controllers
 {
@@ -24,7 +19,7 @@ namespace HAPI.Controllers
         [Route("list")]
         public ActionResult<Room> GetAllRooms()
         {
-            var rooms = dataService.Query<Room>(Room.Views.RoomE).ToList();
+            var rooms = BookingService.GetAllRooms(dataService);
             return Ok(rooms);
 
         }
@@ -33,16 +28,7 @@ namespace HAPI.Controllers
         [Route("TotalRevenue")]
         public ActionResult<decimal> GetSumOfRevenue() 
         {
-            var bookings = dataService.Query<Booking>(Booking.Views.BookingL).ToList();
-            decimal sumOfRevenue = 0;
-
-            foreach (var booking in bookings)
-            {
-                var daysBooked = (booking.CheckOut - booking.CheckIn).TotalDays;
-                var roomPrice = booking.Room.Price;
-
-                sumOfRevenue += (decimal)(daysBooked * roomPrice);
-            }
+            var sumOfRevenue = BookingService.GetSumOfRevenue(dataService);
             return Ok(sumOfRevenue);
         }
     }
