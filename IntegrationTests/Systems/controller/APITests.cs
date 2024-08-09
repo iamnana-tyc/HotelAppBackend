@@ -130,7 +130,6 @@ namespace HAPI.Systems.Controller
             var specificCheckOut = new DateTime(2024, 08, 30);
             var expctedDates = (specficCheckIn, specificCheckOut);
 
-
             // Act
             var booking = BookingFixtures.GetBookings();
             var result = booking.Find( c => c.CheckIn == specficCheckIn && c.CheckOut == specificCheckOut);
@@ -139,6 +138,7 @@ namespace HAPI.Systems.Controller
             Assert.NotNull(result);
             Assert.Equal(expctedDates, (result.CheckIn, result.CheckOut));
         }
+
         public void Dispose()
         {
             var dataList = new List<DataObject>();
