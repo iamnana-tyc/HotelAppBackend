@@ -35,7 +35,7 @@
             room.SetExistObjectPrimaryKey(roomId);
 
             var bookings = dataService.Query<Booking>(Booking.Views.BookingE).Where(b => b.Room == room);
-            return !bookings.Any(b => b.CheckIn.Date == dateToFilter);
+            return !bookings.Any(b => b.CheckIn.Date == dateToFilter.Date);
         }
     }
 }
