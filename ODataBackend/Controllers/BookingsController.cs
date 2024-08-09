@@ -21,7 +21,6 @@ namespace HAPI.Controllers
         {
             var rooms = BookingService.GetAllRooms(dataService);
             return Ok(rooms);
-
         }
 
         [HttpGet]
