@@ -1,5 +1,6 @@
 ﻿namespace HAPI
 {
+    using HAPI.Controllers;
     using ICSSoft.STORMNET.Business;
     using ICSSoft.STORMNET.Security;
     using Microsoft.Extensions.Configuration;
