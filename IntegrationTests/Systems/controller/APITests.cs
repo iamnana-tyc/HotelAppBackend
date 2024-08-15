@@ -43,7 +43,6 @@ namespace HAPI.Systems.Controller
         [Fact]
         public void GetAllRooms_OnSuccess_ReturnListOfRooms()
         {
-
             // Act
             List<Room> roomsResult = BookingService.GetAllRooms(dataService);
 
@@ -99,40 +98,41 @@ namespace HAPI.Systems.Controller
         public void GetAllRooms_OnSuccess_ShouldReturnSpecificRoomNumber()
         {
             // Arrange
-            var rooms = RoomFixtures.GetRooms();
+            var rooms = BookingService.GetAllRooms(dataService);
 
             // Act
-            var specificRoom = rooms[0].RoomNumber;
+            var specificRoom = rooms[1].RoomNumber;
+            var roomPrice = rooms[1].Price;
 
             // Assert
-            Assert.Equal(100, specificRoom);
+            Assert.Equal(101, specificRoom);
+            Assert.Equal(200, roomPrice);
         }
 
         [Fact]
         public void CheckIfGuestNameExist_OnSucess_ShouldReturnTrue() 
         {
             // Arrange
-            var booking = BookingFixtures.GetBookings();
-            var guestName = "Moses Arthur";
+            var guestName = "Rodney";
 
             // Act
-            var specificBooking = booking[0].GuestName;
+            var result = this.bookings.Find(b => b.GuestName == guestName);
 
             // Assert
-            Assert.Equal(guestName, specificBooking);
+            Assert.NotNull(result);
+            Assert.True(result.GuestName == guestName);
         }
 
         [Fact]
         public void BookingWithSpecificCheckIn_OnSucess_ReturnTrue() 
         {
             // Arrange
-            var specficCheckIn = new DateTime(2024, 08, 20);
-            var specificCheckOut = new DateTime(2024, 08, 30);
+            var specficCheckIn = new DateTime(2024, 08, 08);
+            var specificCheckOut = new DateTime(2024, 08, 20);
             var expctedDates = (specficCheckIn, specificCheckOut);
 
             // Act
-            var booking = BookingFixtures.GetBookings();
-            var result = booking.Find( c => c.CheckIn == specficCheckIn && c.CheckOut == specificCheckOut);
+            var result = bookings.Find(b => b.CheckIn == specficCheckIn && b.CheckOut == specificCheckOut);
 
             // Assert
             Assert.NotNull(result);
